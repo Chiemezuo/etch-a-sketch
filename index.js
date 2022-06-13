@@ -30,6 +30,9 @@ function divMaker(num) {
 
     reset.addEventListener('click', function(e) {
       square.style.backgroundColor = "bisque"
+      square.addEventListener('mouseenter', function(e) {
+        e.target.style.backgroundColor = "black"
+      })
     })
 
     container.appendChild(square)
