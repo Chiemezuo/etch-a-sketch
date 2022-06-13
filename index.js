@@ -4,6 +4,7 @@ const container = document.querySelector('.container')
 const eraseButton = document.querySelector('.eraser')
 const backToBlack = document.querySelector('.black')
 const reset = document.querySelector('.reset')
+let hoverColor = 'black'
 
 //create a function for making a square div
 function divMaker(num) {
@@ -13,7 +14,7 @@ function divMaker(num) {
     square.style.setProperty('height', `calc(600px/${Math.sqrt(num)})`)
     square.style.backgroundColor = "bisque"
     square.addEventListener('mouseenter', function(e) {
-      e.target.style.backgroundColor = "black"
+      e.target.style.backgroundColor = hoverColor
     })
 
     eraseButton.addEventListener('click', function(e) {
@@ -31,7 +32,7 @@ function divMaker(num) {
     reset.addEventListener('click', function(e) {
       square.style.backgroundColor = "bisque"
       square.addEventListener('mouseenter', function(e) {
-        e.target.style.backgroundColor = "black"
+        e.target.style.backgroundColor = hoverColor
       })
     })
 
