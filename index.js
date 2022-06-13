@@ -1,5 +1,9 @@
+let num = 25
+
 const container = document.querySelector('.container')
 const eraseButton = document.querySelector('.eraser')
+const backToBlack = document.querySelector('.black')
+const reset = document.querySelector('.reset')
 
 //create a function for making a square div
 function divMaker(num) {
@@ -18,8 +22,18 @@ function divMaker(num) {
       })
     })
 
+    backToBlack.addEventListener('click', function(e) {
+      square.addEventListener('mouseenter', function(e) {
+        e.target.style.backgroundColor = "black"
+      })
+    })
+
+    reset.addEventListener('click', function(e) {
+      square.style.backgroundColor = "bisque"
+    })
+
     container.appendChild(square)
   }
 }
 
-divMaker(8100)
+divMaker(num)
