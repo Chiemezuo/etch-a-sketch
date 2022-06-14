@@ -1,5 +1,6 @@
-let num = 25
+let num = 64
 
+const gameBody = document.querySelector('.game-body')
 const container = document.querySelector('.container')
 const eraseButton = document.querySelector('.eraser')
 const backToBlack = document.querySelector('.black')
@@ -21,12 +22,14 @@ function divMaker(num) {
     })
 
     eraseButton.addEventListener('click', function(e) {
+      picker.value = ""
       square.addEventListener('mouseenter', function(e) {
         e.target.style.backgroundColor = "bisque"
       })
     })
 
     backToBlack.addEventListener('click', function(e) {
+      picker.value = ""
       square.addEventListener('mouseenter', function(e) {
         e.target.style.backgroundColor = "black"
       })
@@ -34,12 +37,14 @@ function divMaker(num) {
 
     reset.addEventListener('click', function(e) {
       square.style.backgroundColor = "bisque"
+      picker.value = ""
       square.addEventListener('mouseenter', function(e) {
         e.target.style.backgroundColor = hoverColor
       })
     })
 
     randomColor.addEventListener('click', function(e){
+      picker.value = ""
       square.addEventListener('mouseenter', function(e) {
         e.target.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`
       })
@@ -54,5 +59,7 @@ function divMaker(num) {
     container.appendChild(square)
   }
 }
+
+gameBody.appendChild(container)
 
 divMaker(num)
