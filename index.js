@@ -5,6 +5,7 @@ const eraseButton = document.querySelector('.eraser')
 const backToBlack = document.querySelector('.black')
 const reset = document.querySelector('.reset')
 const randomColor = document.querySelector('.rainbow')
+let picker = document.querySelector('#color-picker')
 
 let hoverColor = 'black'
 
@@ -41,6 +42,12 @@ function divMaker(num) {
     randomColor.addEventListener('click', function(e){
       square.addEventListener('mouseenter', function(e) {
         e.target.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`
+      })
+    })
+
+    picker.addEventListener('input', function(e) {
+      square.addEventListener('mouseenter', function(e) {
+        e.target.style.backgroundColor = picker.value
       })
     })
 
